@@ -1,10 +1,8 @@
 ---
 layout: page
-title: About
+title: ¿Quién soy?
 permalink: /about/
 ---
-
-### ¿Quién soy?
 
 Developer desde hace más de 25 años. Conocido “mundialmente” como LC. He lidiado con mucho en estos años. Estos son solos unos ejemplos:
 
