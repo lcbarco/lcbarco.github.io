@@ -1,0 +1,40 @@
+I"|<p>Siempre me ha preocupado qué hacían las apks que instalo con mi información.</p>
+
+<p>La mejor forma de saberlo es saber qué hace la app y a dónde se conecta.</p>
+
+<p>El método “sencillo” sería conectar el móvil a un Hotspot WIFI en el que tuviéramos corriendo un sniffer tipo tcpdump.
+<!--more--></p>
+
+<p>Pero como no quiero montar la de Dios, prefiero decompilar la app para intentar averiguar lo que hace.</p>
+
+<p>Lo primero que necesitaremos será el apk. Para ello nos podemos conectar a https://apkpure.com/es/ buscar la app que tenemos instalada y descargarla.</p>
+
+<p><img src="/images/dex2jar-1.png" alt="Página home apkpure.com" /></p>
+
+<p>Para conseguir los ficheros java de la app, descargamos dex2jar de la página https://sourceforge.net/projects/dex2jar/ , descomprimimos el zip y copiamos dentro el apk de la aplicación. A continuación ejecutamos el comando d2j-dex2jar.sh</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cp aplicacion_de_la_que_no_me_fio.apk dex2jar-2.0
+cd dex2jar-2.0
+sh d2j-dex2jar.sh aplicacion_de_la_que_no_me_fio.apk
+</code></pre></div></div>
+
+<p>Generará un fichero aplicacion_de_la_que_no_me_fio-dex2jar.jar.</p>
+
+<p>Ahora necesitaremos el JD-GUI para poder sacar las clases java del jar. Para ello descargamos el programa de http://jd.benow.ca/</p>
+
+<p>Una vez abierto y elegido el fichero jar, podemos navegar por el código java de la app.</p>
+
+<p><img src="/images/dex2jar-2.png" alt="Captura JD-GUI" /></p>
+
+<p>Si también queremos sacar todos los recursos de la app, lo siguiente que tenemos que hacer es descargarnos el software Apk Tool https://ibotpeaches.github.io/Apktool/install/ para decompilar el fichero apk original. Para ello seguimos las instrucciones para instalarlo según nuestro sistema operativo.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+apktool d aplicacion_de_la_que_no_me_fio.apk
+
+</code></pre></div></div>
+
+<p><img src="/images/dex2jar-3.png" alt="Resultado del terminal" /></p>
+
+<p>Con ello conseguiremos tener decompilados todos los recursos de al app.</p>
+
+:ET

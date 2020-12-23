@@ -1,0 +1,12 @@
+I"�<p>Siempre me ha preocupado qué hacían las apks que instalo con mi información.</p>
+
+<p>La mejor forma de saberlo es saber qué hace la app y a dónde se conecta.</p>
+
+<p>El método “sencillo” sería conectar el móvil a un Hotspot WIFI en el que tuviéramos corriendo un sniffer tipo tcpdump.</p>
+
+<p>Pero como no quiero montar la de Dios, prefiero decompilar la app para intentar averiguar lo que hace.</p>
+
+<p>Lo primero que necesitaremos será el apk. Para ello nos podemos conectar a https://apkpure.com/es/ buscar la app que tenemos instalada y descargarla.</p>
+
+<p><img src="/images/dex2jar-1.png" alt="Página home apkpure.com" /></p>
+:ET
