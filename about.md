@@ -18,4 +18,4 @@ Developer desde hace más de 25 años. Conocido “mundialmente” como LC. He l
 
 ### Contacto
 
-Si quieres contactar conmigo lo puedes hacer enviándome un email a [lcbarco@okiburi.com](mailto:lcbarco@okiburi.com) o a través de mi cuenta de Twitter https://twitter.com/lcbarco
+Si quieres contactar conmigo lo puedes hacer enviándome un email a [lcbarco@gmail.com](mailto:lcbarco@gmail.com) o a través de mi cuenta de Twitter [https://twitter.com/lcbarco](https://twitter.com/lcbarco)
