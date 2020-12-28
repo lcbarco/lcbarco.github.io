@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ¿Cómo crear un blog con Jekyll y Github pages?
+title: ¿Cómo crear un blog con Jekyll y Github pages en 15 minutos?
 ---
 
 ¿Por qué no uso **Wordpress** en vez de tener que usar **Jekyll** y **Github pages**? Dos motivos: sencillez y personalización.
