@@ -3,7 +3,7 @@ layout: post
 title: ¿Cómo conseguir el código java de una app Android?
 summary: Extraer el código de una aplicación Java es muy sencillo
 author: lcbarco
-image: https://lcbarco.com/images/dex2jar-1.png
+image: /images/dex2jar-1.png
 ---
 
 Siempre me ha preocupado qué hacían las apks que instalo con mi información.
