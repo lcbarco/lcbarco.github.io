@@ -18,11 +18,11 @@ Lo primero que necesitaremos será el apk. Para ello nos podemos conectar a http
 
 Para conseguir los ficheros java de la app, descargamos dex2jar de la página https://sourceforge.net/projects/dex2jar/ , descomprimimos el zip y copiamos dentro el apk de la aplicación. A continuación ejecutamos el comando d2j-dex2jar.sh
 
-~~~
+```
 cp aplicacion_de_la_que_no_me_fio.apk dex2jar-2.0
 cd dex2jar-2.0
 sh d2j-dex2jar.sh aplicacion_de_la_que_no_me_fio.apk
-~~~
+```
 
 Generará un fichero aplicacion_de_la_que_no_me_fio-dex2jar.jar.
 

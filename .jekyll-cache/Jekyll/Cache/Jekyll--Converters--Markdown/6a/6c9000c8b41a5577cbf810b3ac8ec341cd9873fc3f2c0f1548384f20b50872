@@ -1,0 +1,10 @@
+I"�<p>¿Por qué no uso <strong>Wordpress</strong> en vez de tener que usar <strong>Jekyll</strong> y <strong>Github pages</strong>? Dos motivos: sencillez y personalización.</p>
+
+<p><strong>Wordpress</strong> es un magnífico CMS (Content Management System) que nos permite tener fácilmente nuestro propio blog.</p>
+
+<p>Entonces, ¿por qué no lo uso?. <strong>Worpress</strong> te permite elegir entre realizar la instalación <strong>On Premise</strong> en tu propio servidor o hacer uso de su servicio de hosting. Yo no quería “perder tiempo” en realizar la instalación <strong>On Premise</strong> y en primera instancia opté por el servicio de hosting de Wordpress. El problema es que en su primer nivel de usuario de pago de Wordpress no se puede hacer uso de plugins con lo que al final es muy limitado.</p>
+
+<p>Entonces me fijé en la integración <strong>Jekyll</strong> dentro de <strong>Github pages</strong>.</p>
+
+<p><img src="/images/github-pages.png" alt="Página home apkpure.com" /></p>
+:ET

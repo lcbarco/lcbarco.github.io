@@ -1,0 +1,72 @@
+I"m<p>¿Por qué no uso <strong>Wordpress</strong> en vez de tener que usar <strong>Jekyll</strong> y <strong>Github pages</strong>? Dos motivos: sencillez y personalización.</p>
+
+<p><strong>Wordpress</strong> es un magnífico CMS (Content Management System) que nos permite tener fácilmente nuestro propio blog.</p>
+
+<p>Entonces, ¿por qué no lo uso?. <strong>Worpress</strong> te permite elegir entre realizar la instalación <strong>On Premise</strong> en tu propio servidor o hacer uso de su servicio de hosting. Yo no quería “perder tiempo” en realizar la instalación <strong>On Premise</strong> y en primera instancia opté por el servicio de hosting de Wordpress. El problema es que en su primer nivel de usuario de pago de Wordpress no se puede hacer uso de plugins con lo que al final es muy limitado.</p>
+
+<p>Entonces me fijé en la integración <strong>Jekyll</strong> dentro de <strong>Github pages</strong>.</p>
+
+<p><img src="/images/github-pages.png" alt="Página home apkpure.com" />
+<!--more--></p>
+
+<h2 id="cómo-empezar">¿Cómo empezar?</h2>
+<p>El método más sencillo para realizar la instalación sería buscar el <strong>Theme</strong> que más te gusta y partir de su fork en <strong>Github</strong>.</p>
+
+<p>En mi caso el <strong>Theme</strong> que más me gustaba era <a href="https://github.com/barryclark/jekyll-now">Jekyll Now</a>.</p>
+
+<p>Para ello accedemos a la página de Github de <a href="https://github.com/barryclark/jekyll-now">Jekyll Now</a> y pulsamos sobre el icono Fork que aparece arriba a la derecha.</p>
+
+<p><img src="/images/fork-github.png" alt="Página del Theme al que hacer Fork" /></p>
+
+<p>Una vez realizado el Fork, nos aparecerá el repositorio no el mismo nombre que el repositorio del Theme. Ahora debemos cambiar el nombre del repositorio en Settings. El nuevo nombre debe llevar la sintaxis de &lt;username&gt;.github.io.</p>
+
+<p><img src="/images/github-settings.png" alt="Página de Settings de nuestro proyecto" /></p>
+
+<p>Para ver que todo funciona, sólo hace falta acceder a https://&lt;username&gt;.github.io para ver que se está publicando. Puede que tarde algunos segundos en actualizar la información.</p>
+
+<h2 id="entorno-de-edición-en-local">Entorno de edición en local</h2>
+<p>Se podría realizar la creación y edición de Posts desde la propia página de Github, pero sería un trabajo tedioso. Para ello vamos a realizar la edición en local.</p>
+
+<p>Lo primero de tenemos que tener instalado en local es la última versión de Jekyll. Enlazo la página web del Quickstart de Jekyll en el que se muestra <a href="https://jekyllrb.com/docs/">cómo realizar la instalación de Jekyll</a>.</p>
+
+<p>Un vez realizada la instalación hacemos un <strong>clone</strong> de nuestro proyecto en local y lanzamos el servidor interno de Jekyll con la opción de autoreload. Para ello ejecutamos:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/&lt;username&gt;/&lt;username&gt;.github.io.git
+cd &lt;username&gt;.github.io
+jekyll serve --livereload
+</code></pre></div></div>
+
+<p>Lo siguiente que debemos hacer en editar el archivo <em>_config.yml</em> y rellenar la información propia de nuestro blog: <em>título, descripción, redes sociales, etc…</em></p>
+
+<p>Desde este momento podremos ir viendo los cambios que vamos realizando en <a href="http://127.0.0.1:4000/">http://127.0.0.1:4000/</a></p>
+
+<h2 id="creación-del-primer-post">Creación del primer Post</h2>
+<p>Lo primero que vamos a realizar es la creación de un nuevo <strong>Post</strong>. Los <strong>Posts</strong> se almacenan como ficheros independientes dentro de la carpeta <strong>_posts</strong>. Estos ficheros utilizan una sintaxis de tipo <strong>Markdown</strong> que posteriormente serán traducidas a html por <strong>Jekyll</strong>. Se puede usar como referencia la página web de <a href="https://www.markdownguide.org/cheat-sheet/">Markdown Guide</a> para conseguir más información sobre cómo usar <strong>Markdown</strong>.</p>
+
+<p>Haciendo uso de nuestro editor de texto favorito (Vim, Visual Studio Code, etc…), creamos un fichero que debe empezar por la fecha del post en formato <strong>año-mes-día-&lt;url del post&gt;.md</strong>. Es recomendable el hacer uso de los guiones normales para separar las palabras del nombre del fichero en vez de los guiones bajos ya que es mejor para el <strong>SEO</strong>.</p>
+
+<p>El fichero empieza por la sección en la que indicamos los Metadatos del post. En nuestro caso indicamos el layout de Post y el título que se va a mostrar.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+layout: post
+title: ¿Cómo crear un blog con Jekyll y Github pages?
+---
+</code></pre></div></div>
+
+<p>A continuación iremos creando el post con la sintaxis de <strong>Markdown</strong>.</p>
+
+<p>Siempre podremos modificar los diferentes layouts de la página web del Blog desde la carpeta <em>_layouts</em>, modificar la página principal <em>index.html</em>, modificar los estilos en <em>styles.scss</em>, etc…</p>
+
+<h2 id="publicación">Publicación</h2>
+
+<p>Una vez realizados todos los cambios necesarios haremos <strong>commit</strong> de todos los cambios y haremos <strong>push</strong> a la rama <strong>master</strong> de nuestro repositorio en Github para ver los cambios.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add --all
+git commit -m "first post"
+git push origin master
+</code></pre></div></div>
+
+<h2 id="conclusiones">Conclusiones</h2>
+<p>Como veis es muy sencillo el tener tu propio blog en cuestión de minutos. Prueba a crear el tuyo y contáctame si tienes algún problema enviándome un email a <a href="mailto:lcbarco@gmail.com">lcbarco@gmail.com</a> o a través de mi cuenta de Twitter <a href="https://twitter.com/lcbarco">https://twitter.com/lcbarco</a>.</p>
+
+:ET
