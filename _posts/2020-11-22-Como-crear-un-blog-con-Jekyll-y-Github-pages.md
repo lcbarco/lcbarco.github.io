@@ -56,7 +56,7 @@ El fichero empieza por la sección en la que indicamos los Metadatos del post. E
 ```
 ---
 layout: post
-title: ¿Cómo crear un blog con Jekyll y Github pages?
+title: ¿Cómo crear un blog con Jekyll y Github pages en 15 minutos?
 ---
 ```
 
