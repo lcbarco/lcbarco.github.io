@@ -23,7 +23,7 @@ Para ello accedemos a la página de Github de [Jekyll Now](https://github.com/ba
 
 ![Página del Theme al que hacer Fork](/images/fork-github.png)
 
-Una vez realizado el Fork, nos aparecerá el repositorio no el mismo nombre que el repositorio del Theme. Ahora debemos cambiar el nombre del repositorio en Settings. El nuevo nombre debe llevar la sintaxis de \<username\>.github.io.
+Una vez realizado el Fork, nos aparecerá el repositorio con el mismo nombre que el repositorio del Theme. Ahora debemos cambiar el nombre del repositorio por el nuestro en Settings. El nuevo nombre debe llevar la sintaxis de \<username\>.github.io.
 
 ![Página de Settings de nuestro proyecto](/images/github-settings.png)
 
@@ -42,16 +42,16 @@ cd <username>.github.io
 jekyll serve --livereload
 ```
 
-Lo siguiente que debemos hacer en editar el archivo *_config.yml* y rellenar la información propia de nuestro blog: *título, descripción, redes sociales, etc...*
+Lo siguiente que debemos hacer es editar el archivo *_config.yml* y rellenar la información propia de nuestro blog: *título, descripción, redes sociales, etc...*
 
 Desde este momento podremos ir viendo los cambios que vamos realizando en [http://127.0.0.1:4000/](http://127.0.0.1:4000/)
 
 ## Creación del primer Post
 Lo primero que vamos a realizar es la creación de un nuevo **Post**. Los **Posts** se almacenan como ficheros independientes dentro de la carpeta **_posts**. Estos ficheros utilizan una sintaxis de tipo **Markdown** que posteriormente serán traducidas a html por **Jekyll**. Se puede usar como referencia la página web de [Markdown Guide](https://www.markdownguide.org/cheat-sheet/) para conseguir más información sobre cómo usar **Markdown**.
 
-Haciendo uso de nuestro editor de texto favorito (Vim, Visual Studio Code, etc...), creamos un fichero que debe empezar por la fecha del post en formato **año-mes-día-\<url del post>.md**. Es recomendable el hacer uso de los guiones normales para separar las palabras del nombre del fichero en vez de los guiones bajos ya que es mejor para el **SEO**.
+Haciendo uso de nuestro editor de texto favorito (Vim, Visual Studio Code, etc...), creamos un fichero que debe empezar por la fecha del post y la url que va a usar en formato **año-mes-día-\<url del post>.md**. Es recomendable hacer uso de los guiones normales para separar las palabras del nombre del fichero en vez de los guiones bajos ya que es mejor para el **SEO**.
 
-El fichero empieza por la sección en la que indicamos los Metadatos del post. En nuestro caso indicamos el layout de Post y el título que se va a mostrar.
+El fichero empieza por la sección en la que indicamos los Metadatos del post. En nuestro caso indicamos el layout del Post y el título que se va a mostrar.
 
 ```
 ---
@@ -66,7 +66,7 @@ Siempre podremos modificar los diferentes layouts de la página web del Blog des
 
 ## Publicación
 
-Una vez realizados todos los cambios necesarios haremos **commit** de todos los cambios y haremos **push** a la rama **master** de nuestro repositorio en Github para ver los cambios.
+Una vez realizados todos los cambios necesarios haremos **commit** de todos los cambios y **push** a la rama **master** de nuestro repositorio en Github para ver los cambios.
 
 ```
 git add --all
@@ -75,7 +75,7 @@ git push origin master
 ```
 
 ## Conclusiones
-Como veis es muy sencillo el tener tu propio blog en cuestión de minutos. Prueba a crear el tuyo y contáctame si tienes algún problema enviándome un email a [lcbarco@gmail.com](mailto:lcbarco@gmail.com) o a través de mi cuenta de Twitter [https://twitter.com/lcbarco](https://twitter.com/lcbarco).
+Como veis es muy sencillo tener tu propio blog en cuestión de minutos. Prueba a crear el tuyo y contáctame si tienes algún problema enviándome un email a [lcbarco@gmail.com](mailto:lcbarco@gmail.com) o a través de mi cuenta de Twitter [https://twitter.com/lcbarco](https://twitter.com/lcbarco).
 
 
 
