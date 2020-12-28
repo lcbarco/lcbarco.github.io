@@ -1,0 +1,29 @@
+I"�<p>En el blog anterior explicaba <a href="/2020/11/22/Como-crear-un-blog-con-Jekyll-y-Github-pages.html">¿cómo crear un blog con Jekyll y Github pages en 15 minutos?</a>. Esto nos permite tener un blog creado de forma sencilla, extendible y rápido.</p>
+
+<p>Ahora lo que necesitamos es poder asociarle nuestro propio dominio y que no tengamos que usar la url suministrada por Github https://&lt;username&gt;.github.io.</p>
+
+<p><img src="/images/lcbarco-com.png" alt="lcbarco.com" /></p>
+
+<!--more-->
+
+<h2 id="configurar-el-dns-para-usar-nuestro-blog">Configurar el dns para usar nuestro blog</h2>
+<p>Lo primero que debemos hacer es acceder al lugar donde tengamos comprado nuestro dominio y configurar los registros DNS necesarios para que funcione nuestro blog. Empezaremos añadiendo los registros <strong>A</strong> asociados a las diferentes <strong>IPs</strong> usadas por <strong>Github</strong>. También añadiremos un registro de tipo CNAME apuntando a la url suministrada por Github de nuestro blog.</p>
+
+<p><img src="/images/dns-setting.png" alt="Configuración de registros A y CNAME" /></p>
+
+<h2 id="configurar-el-dominio-en-github">Configurar el dominio en Github</h2>
+
+<p>Una vez que hemos creado los registros A y CNAME en nuestro servidor de DNS, indicamos a Github cuál es el dominio a usar.</p>
+
+<p>Accedemos a la página de Settings del proyecto y en la parte inferior de la página, encontramos la sección <strong>GitHub Pages</strong>. En el apartado <strong>Custom domain</strong> indicamos el dominio que queremos usar.</p>
+
+<p>Debemos asegurarnos de marcar la opción <strong>Enforce HTTPS</strong> para que se encargue de generar un certificado asociado.</p>
+
+<p><img src="/images/git-hub-pages-domain.png" alt="Configuración del dominio" /></p>
+
+<p>Pasados unos segundos podremos acceder a nuestro blog usando nuestro propio dominio.</p>
+
+<h2 id="conclusiones">Conclusiones</h2>
+<p>Como veis es muy sencillo tener tu propio dominio asociado a tu blog. Prueba a crear el tuyo y contáctame si tienes algún problema enviándome un email a <a href="mailto:lcbarco@gmail.com">lcbarco@gmail.com</a> o a través de mi cuenta de Twitter <a href="https://twitter.com/lcbarco">https://twitter.com/lcbarco</a>.</p>
+
+:ET

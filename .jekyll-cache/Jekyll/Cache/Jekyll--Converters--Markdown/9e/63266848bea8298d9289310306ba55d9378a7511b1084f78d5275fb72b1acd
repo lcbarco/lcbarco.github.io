@@ -1,0 +1,7 @@
+I"�<p>En el blog anterior explicaba <a href="/2020/11/22/Como-crear-un-blog-con-Jekyll-y-Github-pages.html">¿cómo crear un blog con Jekyll y Github pages en 15 minutos?</a>. Esto nos permite tener un blog creado de forma sencilla, extendible y rápido.</p>
+
+<p>Ahora lo que necesitamos es poder asociarle nuestro propio dominio y que no tengamos que usar la url suministrada por Github https://&lt;username&gt;.github.io.</p>
+
+<p><img src="/images/lcbarco-com.png" alt="lcbarco.com" /></p>
+
+:ET
