@@ -6,7 +6,7 @@
 name: Luis Carlos Barco
 
 # Short bio or description (displayed in the header)
-description:
+description: Reflexiones de un programador cuarentón
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
 avatar: https://avatars3.githubusercontent.com/u/11350029?s=460&u=d182999d73446c07961b4e9cb5a1a6f557883428&v=4
@@ -15,6 +15,7 @@ avatar: https://avatars3.githubusercontent.com/u/11350029?s=460&u=d182999d73446c
 # Flags below are optional
 #
 
+# Global info for Twitter Cards
 twitter_username: lcbarco
 
 # Includes an icon in the footer for each username you enter
