@@ -3,7 +3,7 @@ layout: post
 title: Paralelizacion de Job Services en Grails   4
 summary: Cómo poder ejecutar varios Job Services en Grails4 de forma concurrente
 author: lcbarco
-image: /images/twitter-cards.png
+image: /images/grails_logo.svg
 tags: jekyll
 ---
 
