@@ -4,6 +4,7 @@ title: Asociar Twitter Cards a nuestros posts
 summary: Crea una Card de Twitter para que puedas compartirla
 author: lcbarco
 image: /images/twitter-cards.png
+tags: jekyll
 ---
 
 El otro día, cuando fui a compartir un post de mi blog en **Twitter**, me di cuenta que sólo salía la url del mismo. Investigando un poco, me di cuenta que necesitaba añadir más información a nuestro post para que **Twitter** pudiera generar lo que se llama una [Card](https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/abouts-cards).

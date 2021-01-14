@@ -4,6 +4,7 @@ title: ¿Cómo crear un blog con Jekyll y Github pages en 15 minutos?
 summary: Forma sencilla de crear un blog con Jekyll y Github pages
 author: lcbarco
 image: /images/github-pages.png
+tags: jekyll
 ---
 
 ¿Por qué no uso **Wordpress** en vez de tener que usar **Jekyll** y **Github pages**? Dos motivos: sencillez y personalización.

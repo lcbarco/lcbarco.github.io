@@ -1,0 +1,7 @@
+I"l<p>Hace tiempo comencé un proyecto en <a href="https://grails.org/">Grails4</a>. En un momento del proyecto se hizo necesario en ejecutar Jobs programados a ciertas horas. Para ello <strong>Grails4</strong> tienen implementados los Job Services. Usando la guía <a href="https://guides.grails.org/grails-scheduled/guide/index.html">Grails + @Scheduled</a> realizamos la primera versión.</p>
+
+<p>No tardé en darme cuenta que si varios Jobs se tenían que ejecutar a la vez, no se ejecutaban de forma concurrente sino secuencial.</p>
+
+<p><img src="https://grails.org/images/grails_logo.svg" alt="Log de Grails" /></p>
+
+:ET

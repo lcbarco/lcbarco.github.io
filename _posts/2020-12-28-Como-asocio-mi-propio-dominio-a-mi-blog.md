@@ -4,6 +4,7 @@ title: ¿Cómo asocio mi propio dominio a mi blog?
 summary: Usa tu propio dominio en tu blog
 author: lcbarco
 image: /images/lcbarco_com.png
+tags: jekyll
 ---
 
 En el blog anterior explicaba [¿cómo crear un blog con Jekyll y Github pages en 15 minutos?](/2020/11/22/Como-crear-un-blog-con-Jekyll-y-Github-pages.html). Esto nos permite tener un blog creado de forma sencilla, extendible y rápido.
