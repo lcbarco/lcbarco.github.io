@@ -1,0 +1,9 @@
+I"�<p>¿Quién no ha necesitado en algún momento montar un servidor de SFTP? Crear el servidor, preparar el espacio de disco duro, pegarse con los usuarios, pruebas y realizar un respaldo de la información almacenada…</p>
+
+<p>En un proyecto en el que estoy trabajando nos ha surgido la necesidad de crear un servidor SFTP efímero que sólo va a ser usado una vez. Se podrían haber planteado el hacer uso de algún sistema de transferencia de ficheros que no fuera SFTP, pero por la facilidad de integración como por la estandarización del protocolo SFTP, descartamos el resto de opciones.</p>
+
+<p>Ahora se nos planteaba el realizar el periplo de realizar la creación del servidor de forma tradicional o buscar una opción más álgil, sobretodo teniendo en cuenta el tiempo que iba a estar activo.</p>
+
+<p>Como gran parte de nuestros servicios se encuentran bajo el paráguas de Amazon AWS, nos decidimos por usar AWS Transfer Family.
+<img src="/images/aws-transfer-family.png" alt="AWS Transfer Family" /></p>
+:ET

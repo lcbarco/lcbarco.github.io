@@ -1,0 +1,94 @@
+I"�<p>¿Quién no ha necesitado en algún momento montar un servidor de <strong>SFTP</strong>? Crear el servidor, preparar el espacio de disco duro, pegarse con los usuarios, pruebas y realizar un respaldo de la información almacenada…</p>
+
+<p>En un proyecto en el que estoy trabajando nos ha surgido la necesidad de crear un servidor <strong>SFTP</strong> efímero que sólo va a ser usado una vez. Se podrían haber planteado el hacer uso de algún sistema de transferencia de ficheros que no fuera <strong>SFTP</strong>, pero por la facilidad de integración como por la estandarización del protocolo <strong>SFTP</strong>, descartamos el resto de opciones.</p>
+
+<p>Debíamos plantearnos realizar el periplo de realizar la creación del servidor de forma tradicional o buscar una opción más álgil, sobretodo teniendo en cuenta el tiempo que iba a estar activo.</p>
+
+<p>Como gran parte de nuestros servicios se encuentran bajo el paráguas de <strong>Amazon AWS</strong>, nos decidimos por usar <strong>AWS Transfer Family</strong>.</p>
+
+<p><img src="/images/aws-transfer-family.png" alt="AWS Transfer Family" />
+<!--more--></p>
+
+<h2 id="cómo-funciona-aws-transfer-family">¿Cómo funciona AWS Transfer Family</h2>
+<p>AWS Transfer Family es un servicio de AWS que permite levantar un servidor de <strong>SFTP</strong> y conectarlo con un bucket de S3 en un par de minutos.</p>
+
+<p>El cobro del servicio se realiza tanto por el tiempo que esté levantado el servicio como los datos transferidos, unos 30 centimos de dolar por hora levantado y 4 centimos de dolar por Giga transferido.</p>
+
+<p>Teniendo en cuenta el coste del servicio, el tiempo que iba a estar activo y que directamente vuelca la información a S3 estaba clara la elección.</p>
+
+<p><strong>AWS Transfer Family</strong> te permite hacer la típica configuración de siguiente, siguiente, siguiente y finalizar.</p>
+
+<p>Aquí es donde venía nuestro problema, este tipo de configuración sólo te termite crear usuarios con autentificación con clave pública/privada.</p>
+
+<h2 id="cómo-realizar-la-autentificación-a-través-de-usuariocontraseña">Cómo realizar la autentificación a través de usuario/contraseña</h2>
+<p><strong>AWS Transfer Family</strong> te permite tener tu propio servicio de autentificación para el servidor de <strong>SFTP</strong>.</p>
+
+<p>Tranquilo, AWS proporciona una plantilla de Cloud Formation que se encarga de casi todo. Crear el Stack con Lambda, AWS API Gateway y el servidor de SFTP. Se puede descargar de <a href="https://s3.amazonaws.com/aws-transfer-resources/custom-idp-templates/aws-transfer-custom-idp-secrets-manager-apig.template.yml">aquí</a>.</p>
+
+<p>En está página te explican en el <a href="https://cloudsbaba.com/enabling-password-authentication-for-aws-sftp-transfer-family-service-using-aws-secrets-manager/">Step1 cómo crear el stack</a>. El Step2 se hace automáticamente.</p>
+
+<p>Para el Step3 recomiendo que sigas los pasos que indico a continuación.</p>
+
+<h2 id="configuración-de-roles">Configuración de roles</h2>
+<p>Una vez que tenemos creado el servicio de <strong>SFTP</strong>, vamos a configurar los usuarios que va a acceder a nuestro servidor.</p>
+
+<p>Lo primero que haremos, una vez tenemos el bucket corresponiente, será crear las <em>Policy</em> y los <em>Roles</em> correspondientes en <strong>AWS IAM</strong>.</p>
+
+<p>Vamos a crear la siguiente <em>Policy</em> para dar acceso a nuestro bucket:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "s3:ListBucket",
+                "s3:GetBucketLocation"
+            ],
+            "Resource": "arn:aws:s3:::nombre_del_bucket"
+        },
+        {
+            "Sid": "VisualEditor1",
+            "Effect": "Allow",
+            "Action": [
+                "s3:PutObject",
+                "s3:GetObjectAcl",
+                "s3:GetObject",
+                "s3:DeleteObjectVersion",
+                "s3:DeleteObject",
+                "s3:PutObjectAcl",
+                "s3:GetObjectVersion"
+            ],
+            "Resource": "arn:aws:s3:::nombre_del_bucket/*"
+        }
+    ]
+}
+</code></pre></div></div>
+
+<p>Una vez creada la <em>Policy</em> se a asignamos a un nuevo <em>Rol</em> que llamaremos <strong>Role-for-accesing-S3</strong>.</p>
+
+<p>La parte más importante y que no se explica correctamente, es que en la pestaña Trust relationship del Rol, debemos modificar la <strong>Trusted Entity</strong> del <em>Rol</em> y dar permisos a “transfer.amazonaws.com”. Este cambio es el que hacía que el resto dejara de funcionar.</p>
+
+<h2 id="creación-de-usuarios">Creación de usuarios</h2>
+<p>Como último paso, vamos a crear en el servicio <strong>Secret Manager</strong> los diferentes usuario que va a acceder a nuestro servidor.</p>
+
+<p>Haremos click <em>Store a new secret</em>. Acontinuación elegiremos la opción “<strong>Other type of secret</strong>” y añadiremos la información del usuario como plaintext:
+<img src="/images/aws-secret-manager-1.png" alt="Other type of secret" /></p>
+
+<p>En el siguiente paso en el campo Secret name podremos el nombre de usuario bajo el formato <strong>SFTP/nombre_de_usuario</strong>:
+<img src="/images/aws-secret-manager-2.png" alt="Secret name" /></p>
+
+<p>Seguimos los siguientes pasos y almacenamos la clave.</p>
+
+<h2 id="url-de-conexión">URL de conexión</h2>
+<p>Ya tenemos el servicio, los permisos, los usuarios y sus contraseñas. Sólo nos falta saber dónde conectarnos.</p>
+
+<p>Para ello volvemos acceder al servicio AWS Transfer Family y una vez elegido nuestro servidor, buscamos el campo Endpoint. 
+<img src="/images/aws-transfer-family-end-point.png" alt="Endpoint" /></p>
+
+<p>Ese campo contendrá la URL a la que nos tenemos que conectar usando nuestro cliente de <strong>SFTP</strong> favorito.</p>
+
+<h2 id="conclusiones">Conclusiones</h2>
+<p>Hay veces que queremos crear nuestros propios servicios desde cero. Siempre recomiendo el hacer uso de servicios existentes ya que muchas veces no valoramos el coste económico de la persona que tiene que implementar dicho servicio y sólo nos fijamos en el coste del servicio en si. Prueba a configurar tu servidor de <strong>SFTP</strong> y contáctame si tienes algún problema enviándome un email a <a href="mailto:lcbarco@gmail.com">lcbarco@gmail.com</a> o a través de mi cuenta de Twitter <a href="https://twitter.com/lcbarco">https://twitter.com/lcbarco</a>.</p>
+
+:ET
